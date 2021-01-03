@@ -27,20 +27,22 @@ import {
 	intersect
 } from 'mathjs'
 
-const minTranslateDeg= 5
-const maxTranslateDeg= 85
-const minDistRatio= 0.15
-const maxDistRatio= 0.25
-const minRotateDeg= -15
-const maxRotateDeg= 15
+const minTranslateDeg= 10
+const maxTranslateDeg= 80
+const minDistRatio= .2
+const maxDistRatio= .4
+const minRotateDeg= -180
+const maxRotateDeg= 180
 const minSkewDeg= 0
 const maxSkewDeg= 0
 const minScale= 1
 const maxScale= 1
-const duration= 0.2
-const durationAligned= 0.35
-const delay= 0.1
-const delayDiff= 0.01
+const duration= .2
+const durationAligned= .4
+const delay= .02
+const delayDiff= .02
+const delayAligned= .02
+const delayAlignedDiff= .04
 
 export default {
 	props: {
@@ -57,8 +59,8 @@ export default {
 			rotate: 0,
 			skewX: 0,
 			skewY: 0,
-			scaleX: 1,
-			scaleY: 1
+			scaleX: 0,
+			scaleY: 0
 		}
 	},
 	computed: {
@@ -66,11 +68,17 @@ export default {
 			if(!this.animated){
 				return 0
 			}
-			return this.aligned ? durationAligned : duration
+			if(this.aligned){
+				return durationAligned
+			}
+			return duration
 		},
 		delay(){
 			if(!this.animated){
 				return 0
+			}
+			if(this.aligned){
+				return delayAligned + this.order*delayAlignedDiff
 			}
 			return delay + this.order*delayDiff
 		}

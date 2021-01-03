@@ -1,7 +1,8 @@
 <template>
 	<div class="">
-		<Top></Top>
-		<div class="w-full h-screen bg-gray-200"></div>
+		<TopLogo></TopLogo>
+		<hr class="border-gray-200">
+		<div class="w-full h-screen"></div>
 	</div>
 </template>
 

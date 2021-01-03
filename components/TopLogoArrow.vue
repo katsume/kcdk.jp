@@ -1,5 +1,5 @@
 <template>
-	<span :class="className">
+	<span :class="isFirst?'first':''">
 		<span class="block absolute left-0 top-0 slide-leave-to" v-show="!aligned && !leaving">
 			<TopLogoElement :src="require('@/assets/images/logo-0.svg')"></TopLogoElement>
 		</span>
@@ -37,14 +37,6 @@ export default {
 			leaving: false
 		}
 	},
-	computed: {
-		className(){
-			return [
-				'top-logo-arrow',
-				this.isFirst?'first':''
-			].join(' ')
-		}
-	},
 	methods: {
 		_enter(){
 		},
@@ -67,25 +59,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.top-logo-arrow {
-	--delay-first: 2s;
-	--duration: .25s;
-	--duration-first: 1.5s;
-}
-
 .slide-enter-active, .slide-leave-active {
-	transition-property: transform;
-	transition-duration: var(--duration);
-	transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+	@apply transition-transform ease-in-out-expo duration-250;
 
 	.first & {
-		transition-duration: var(--duration-first);
-		transition-delay: var(--delay-first);
-		transition-timing-function: cubic-bezier(1, .9, .95, 1.25);
+		@apply ease-out-back duration-1500 delay-1000;
 	}
 }
 
 .slide-enter, .slide-leave-to {
-	transform: translateY(-100%);
+	@apply transform -translate-y-full;
 }
 </style>

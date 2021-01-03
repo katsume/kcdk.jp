@@ -9,14 +9,15 @@
 						:aligned="aligned"></TopLogoArrow>
 				</span>
 				<span
-					v-for="(letter, i) in letters"
+					v-for="(char, i) in chars"
 					:key="i"
 					class="logo-letter">
+					<span class="sr-only">{{ char.name }}</span>
 					<TopLogoMotionElement
-						v-for="(element, j) in letter"
-						:key="element.id"
-						:order="element.order"
-						:src="element.src"
+						v-for="(stroke, j) in char.strokes"
+						:key="stroke.id"
+						:order="stroke.order"
+						:src="stroke.src"
 						:viewport="viewport"
 						:animated="!locked"
 						:aligned="!locked && aligned"
@@ -30,23 +31,41 @@
 <script>
 import {range} from 'lodash'
 
-const threshold= .75
+const threshold= .9
 
 export default {
 	data(){
 		let cnt= 0
 		return {
-			letters: [
-				range(3), range(2), range(4), range(3)
-			].map((l, i)=>{
-				return l.map((_, j)=>{
-					const id= `${i+1}-${j+1}`
-					return {
-						id,
-						order: cnt++,
-						src: require(`@/assets/images/logo-${id}.svg`)
-					}
-				})
+			chars: [
+				{
+					name: 'か',
+					numStrokes: 3
+				},
+				{
+					name: 'ち',
+					numStrokes: 2
+				},
+				{
+					name: 'ど',
+					numStrokes: 4
+				},
+				{
+					name: 'き',
+					numStrokes: 3
+				}
+			].map((char, i)=>{
+				return {
+					name: char.name,
+					strokes: range(char.numStrokes).map((stroke, j)=>{
+						const id= `${i+1}-${j+1}`
+						return {
+							id,
+							order: cnt++,
+							src: require(`@/assets/images/logo-${id}.svg`)
+						}
+					})
+				}
 			}),
 			observer: null,
 			viewport: {
@@ -96,25 +115,25 @@ $root-height: 90vh;
 $wrapper-height: $root-height*0.65;
 
 $letters-width-portrait: 64px;
-$letters-height-portrait: 348px;
+$letters-height-portrait: 412px;
 $aspect-portrait: $letters-width-portrait / $letters-height-portrait;
 $letter-offset-portrait: (
-	0,
-	88px,
-	154.5px,
-	221px,
-	289px
+	64px,
+	152px,
+	218.5px,
+	285px,
+	353px
 );
 
-$letters-width-landscape: 335px;
+$letters-width-landscape: 399px;
 $letters-height-landscape: 64px;
 $aspect-landscape: $letters-width-landscape / $letters-height-landscape;
 $letter-offset-landscape: (
-	0,
-	103.5px,
-	164.5px,
-	223.5px,
-	284px
+	64px,
+	167.5px,
+	228.5px,
+	287.5px,
+	348px
 );
 
 .top {
@@ -132,7 +151,7 @@ $letter-offset-landscape: (
 .logo-letter {
 	@apply block absolute left-0 w-full;
 	height: percentage($aspect-portrait);
-	@for $i from 2 through 5 {
+	@for $i from 1 through 5 {
 		&:nth-child(#{$i}) { top: percentage(nth($letter-offset-portrait, $i) / $letters-height-portrait); }
 	}
 }
@@ -148,7 +167,7 @@ $letter-offset-landscape: (
 		height: 100%;
 		top: 0 !important;
 		&:nth-child(1) { transform: rotate(-90deg); }
-		@for $i from 2 through 5 {
+		@for $i from 1 through 5 {
 			&:nth-child(#{$i}) { left: percentage(nth($letter-offset-landscape, $i) / $letters-width-landscape); }
 		}
 	}

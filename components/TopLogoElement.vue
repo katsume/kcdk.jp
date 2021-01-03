@@ -1,6 +1,6 @@
 <template>
 	<img
-		class="w-full h-auto"
+		class="w-full h-auto transition-transform ease-in-out-expo"
 		:style="transform"
 		:src="src">
 </template>
@@ -64,9 +64,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-img {
-	transition-property: transform;
-	transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
-}
+<style>
 </style>
