@@ -13,20 +13,6 @@ module.exports= {
 					'800': '#333333',
 					'900': '#1a1a1a'
 				}
-			},
-			scale: {
-				'200': '2'
-			},
-			transitionTimingFunction: {
-				'out-back': 'cubic-bezier(1, .9, .95, 1.25)',
-				'in-out-expo': 'cubic-bezier(0.87, 0, 0.13, 1)'
-			},
-			transitionDuration: {
-				'250': '250ms',
-				'1500': '1500ms'
-			},
-			transitionDelay: {
-				'2000': '2000ms'
 			}
 		}
 	}

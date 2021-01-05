@@ -1,6 +1,6 @@
 <template>
 	<div class="">
-		<TopLogo></TopLogo>
+		<Top></Top>
 		<hr class="border-gray-200">
 		<div class="w-full h-screen"></div>
 	</div>
