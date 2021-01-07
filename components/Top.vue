@@ -5,12 +5,12 @@
 			<h1 class="logo">
 				<span class="logo-arrow">
 					<TopLogoArrow
-						:visible="showArrow"
-						:pointed="pointArrow"></TopLogoArrow>
+						:visible="arrow.visible"
+						:pointed="arrow.pointed"></TopLogoArrow>
 				</span>
 				<span>
 					<span
-						v-for="(char, i) in chars"
+						v-for="(char, i) in chars.data"
 						:key="i"
 						class="logo-char">
 						<span class="sr-only">{{ char.name }}</span>
@@ -20,9 +20,9 @@
 							:src="stroke.src"
 							:index="stroke.index"
 							:vw="vw" :vh="vh"
-							:animated="animateChars"
-							:visible="showChars"
-							:aligned="alignChars"></TopLogoCharStroke>
+							:animated="chars.animated"
+							:visible="chars.visible"
+							:aligned="chars.aligned"></TopLogoCharStroke>
 					</span>
 				</span>
 			</h1>
@@ -58,43 +58,47 @@ export default {
 	data(){
 		let cnt= 0
 		return {
-			chars: [
-				{
-					name: 'か',
-					numStrokes: 3,
-				},
-				{
-					name: 'ち',
-					numStrokes: 2
-				},
-				{
-					name: 'ど',
-					numStrokes: 4
-				},
-				{
-					name: 'き',
-					numStrokes: 3
-				}
-			].map((char, i)=>{
-				char.strokes= range(char.numStrokes).map((stroke, j)=>{
-					const id= `${i+1}-${j+1}`
-					return {
-						id,
-						index: cnt++,
-						src: require(`@/assets/images/logo-${id}.svg`)
+			chars: {
+				data: [
+					{
+						name: 'か',
+						numStrokes: 3,
+					},
+					{
+						name: 'ち',
+						numStrokes: 2
+					},
+					{
+						name: 'ど',
+						numStrokes: 4
+					},
+					{
+						name: 'き',
+						numStrokes: 3
 					}
-				})
-				return char
-			}),
+				].map((char, i)=>{
+					char.strokes= range(char.numStrokes).map((stroke, j)=>{
+						const id= `${i+1}-${j+1}`
+						return {
+							id,
+							index: cnt++,
+							src: require(`@/assets/images/logo-${id}.svg`)
+						}
+					})
+					return char
+				}),
+				aligned: true,
+				animated: false,
+				visible: false
+			},
+			arrow: {
+				visible: false,
+				pointed: false
+			},
 			vw: 0,
 			vh: 0,
 			observer: null,
 			interactive: false,
-			animateChars: false,
-			showArrow: false,
-			showChars: false,
-			pointArrow: false,
-			alignChars: true,
 		}
 	},
 	methods: {
@@ -108,8 +112,8 @@ export default {
 			if(!this.interactive){
 				return
 			}
-			this.pointArrow= isIntersecting
-			this.alignChars= isIntersecting
+			this.arrow.pointed= isIntersecting
+			this.chars.aligned= isIntersecting
 		}
 	},
 	async mounted(){
@@ -122,16 +126,16 @@ export default {
 		this.observer.observe(this.$el)
 
 		await delay(0)
-		this.alignChars= false
+		this.chars.aligned= false
 		await delay(0)
-		this.animateChars= true
-		this.showChars= true
+		this.chars.animated= true
+		this.chars.visible= true
 		await delay(500)
-		this.showArrow= true
-		await delay(1500)
-		this.pointArrow= true
+		this.arrow.visible= true
+		await delay(1000)
+		this.arrow.pointed= true
 		await delay(2000)
-		this.alignChars= true
+		this.chars.aligned= true
 		await delay(300)
 		this.interactive= true
 	},
@@ -170,11 +174,11 @@ $char-offset-landscape: (
 
 .top {
 	@apply flex w-full justify-center items-center overflow-hidden;
-	height: 90vh;
+	height: $top-height;
 }
 
 .logo-wrapper {
-	width: calc(#{$top-height} * 0.65 * #{$aspect-portrait});
+	width: calc(#{$top-height} * 0.75 * #{$aspect-portrait});
 }
 .logo {
 	@apply relative w-full h-0;

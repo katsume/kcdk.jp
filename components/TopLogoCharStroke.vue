@@ -64,12 +64,12 @@ const config= {
 		},
 		arrange: {
 			duration: 300,
-			easing: 'easeInOutExpo',
+			easing: 'easeInOutBack',
 			delay: 16
 		},
 		disarrange: {
-			duration: 300,
-			easing: 'easeInOutExpo',
+			duration: 500,
+			easing: 'easeOutExpo',
 			delay: 16
 		}
 	}

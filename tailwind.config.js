@@ -1,5 +1,12 @@
 module.exports= {
 	theme: {
+		fontFamily: {
+			sans: [
+				'adobe-garamond-pro',
+				'yu-mincho-pr6n',
+				'sans-serif'
+			]
+		},
 		extend: {
 			colors: {
 				gray: {
@@ -13,6 +20,12 @@ module.exports= {
 					'800': '#333333',
 					'900': '#1a1a1a'
 				}
+			},
+			scale: {
+				'200': '2'
+			},
+			translate: {
+				'-1/4': '-25%'
 			}
 		}
 	}

@@ -1,6 +1,8 @@
 const title= 'かちどき'
 const description= ''
-const url= 'https://kcdk.jp/'
+const host= 'https://kcdk.jp'
+const pathname= '/'
+const url= host+pathname
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -12,7 +14,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: description },
       { hid: 'og:title', property: 'og:title', content: title },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: url },
@@ -25,11 +27,15 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
+    ],
+    script: [
+      { src: 'https://use.typekit.net/tzs6dei.js' }
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '@/assets/scss/common.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
