@@ -148,7 +148,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$top-height: 90vh;
+$top-height: 95vh;
 
 $chars-width-portrait: 64px;
 $chars-height-portrait: 412px;

@@ -1,10 +1,12 @@
 <template>
 	<div class="">
 		<Top></Top>
-		<hr class="border-gray-200">
+		<hr class="border-gray-100">
 		<div class="
 			w-full h-screen
-			p-5 md:p-10 lg:p-16
+			px-5 py-8
+			md:px-10 md:py-16
+			lg:px-16 lg:py-16
 			flex flex-col justify-between">
 			<div class="
 				w-full lg:container lg:mx-auto
