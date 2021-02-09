@@ -1,5 +1,5 @@
 const title= 'かちどき'
-const description= ''
+const description= 'テクニカルディレクター / デザイナー 勝目祐一郎'
 const host= 'https://kcdk.jp'
 const pathname= '/'
 const url= host+pathname
@@ -56,7 +56,5 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  },
-
-  ssr: false
+  }
 }

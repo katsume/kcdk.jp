@@ -31,18 +31,9 @@
 </template>
 
 <script>
-import anime from 'animejs/lib/anime.es.js'
-
 import {
-	random,
-	range,
-	sample
+	range
 } from 'lodash'
-
-import {
-	distance,
-	intersect
-} from 'mathjs'
 
 const threshold= .9
 
