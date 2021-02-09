@@ -2,7 +2,7 @@
 	<div class="">
 		
 		<Top></Top>
-		<hr class="">
+		<hr class="border-gray-100">
 
 		<div class="
 			w-full h-screen
@@ -77,7 +77,7 @@
 						<div class="">
 							<h2 class="">
 								<small class="block text-xs leading-snug">
-									テクニカルディレクター / デザイナー
+									テクニカルディレクター／デザイナー
 								</small>
 								<span class="block md:mt-1 text-xl tracking-wider">勝目 祐一郎</span>
 								<small class="block md:mt-1 font-semibold italic text-xs md:text-sm">Yuichiro Katsume</small>
@@ -87,7 +87,7 @@
 							<p class="text-xs md:text-sm">
 								1983年東京都出身。2007年、東京芸術大学美術学部建築科卒業。<br class="hidden md:block">
 								2009年、同大学院映像研究科メディア映像専攻修了。<br class="hidden md:block">
-								IMG SRC、DRAFTを経て現在フリーランス。
+								IMG SRC、DRAFTを経て2019年からフリーランス。
 							</p>
 						</div>
 					</div>

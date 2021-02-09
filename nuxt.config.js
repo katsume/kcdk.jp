@@ -1,5 +1,5 @@
 const title= 'かちどき'
-const description= 'テクニカルディレクター / デザイナー 勝目祐一郎'
+const description= 'テクニカルディレクター／デザイナー 勝目祐一郎'
 const host= 'https://kcdk.jp'
 const pathname= '/'
 const url= host+pathname
@@ -11,6 +11,9 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title,
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
