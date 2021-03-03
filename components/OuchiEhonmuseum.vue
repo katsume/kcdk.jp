@@ -76,7 +76,15 @@
 						<dt class="font-bold">主催</dt>
 						<dd class="mt-2 leading-loose">福岡アジア美術館 / 西日本新聞社 / TNCテレビ西日本 / NPO法人子ども文化コミュニティ</dd>
 						<dt class="mt-8 font-bold">制作チーム</dt>
-						<dd class="mt-2 leading-loose">plaplax / 齋藤雄介 / 勝目祐一郎（かちどき） / トラフ建築設計事務所 / 中村至男 / みんなのダンボールマン（d_l_b） / 森紗和子 / NPO法人子ども文化コミュニティ</dd>
+						<dd class="mt-2 leading-loose">
+							<a class="underline" href="https://plaplax.com/" target="_blank">plaplax</a> / 
+							<a class="underline" href="https://magiclogic.jp/" target="_blank">齋藤雄介</a> / 
+							<span class="text-black text-opacity-50">勝目祐一郎（かちどき）</span> / 
+							<a class="underline" href="http://www.torafu.com/" target="_blank">トラフ建築設計事務所</a> / 
+							<a class="underline" href="http://nakamuranorio.com/" target="_blank">中村至男</a> / 
+							<a class="underline" href="https://danboard-man.com/" target="_blank">みんなのダンボールマン（d_l_b）</a> / 
+							<a class="underline" href="https://www.instagram.com/heinrichshatao/" target="_blank">森紗和子</a> / 
+							<a class="underline" href="https://kodomo-abc.org/" target="_blank">NPO法人子ども文化コミュニティ</a></dd>
 					</dl>
 				</div>
 				<div class="mt-8 md:mt-0">

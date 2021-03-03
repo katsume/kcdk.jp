@@ -1,5 +1,5 @@
 const title= 'かちどき'
-const description= 'テクニカルディレクター／デザイナー 勝目祐一郎'
+const description= 'テクニカルディレクター 勝目祐一郎'
 const host= 'https://kcdk.jp'
 const pathname= '/'
 const url= host+pathname

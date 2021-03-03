@@ -10,7 +10,7 @@
 		">
 			<h2 class="">
 				<small class="block text-xs leading-snug">
-					テクニカルディレクター／デザイナー
+					テクニカルディレクター<br>デザイナー
 				</small>
 				<span class="block mt-1 text-xl md:text-2xl tracking-wider">勝目 祐一郎</span>
 				<small class="block font-semibold italic text-sm md:text-sm">Yuichiro Katsume</small>
