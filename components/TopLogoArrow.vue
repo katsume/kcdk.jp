@@ -1,25 +1,62 @@
 <template>
-	<span
-		class="block"
+	<div
+		class="
+			relative w-full h-full
+			transform origin-top sm:origin-left
+		"
 		:style="{
-			transform: [
-				`rotate(${rotate}deg)`,
-				`scale(${scale})`
-			].join(' ')
+			'--transform-scale-x': scale,
+			'--transform-scale-y': scale
 		}">
-		<img
-			class="block w-full h-full origin-top"
-			:style="{
-				transform: `scaleY(${length})`
-			}"
-			:src="require('@/assets/images/logo-0-1.svg')">
-		<img
-			class="block absolute bottom-0 w-full h-full"
-			:style="{
-				transform: `translateY(${(length-1)*100}%)`
-			}"
-			:src="require('@/assets/images/logo-0-2.svg')">
-	</span>
+		<div class="sm:hidden w-full h-full">
+			<img
+				class="
+					absolute left-0 top-0
+					w-full h-full
+					transform origin-top sm:origin-left
+				"
+				:style="{
+					'--transform-scale-y': length*0.5
+				}"
+				alt=""
+				:src="require('@/assets/images/top/logo-0-1-portrait.svg')">
+			<img
+				class="
+					absolute left-0 top-0
+					w-full h-full
+					transform origin-top sm:origin-left
+				"
+				:style="{
+					'--transform-translate-y': `${(length-2)*50}%`
+				}"
+				alt=""
+				:src="require('@/assets/images/top/logo-0-2-portrait.svg')">
+		</div>
+		<div class="hidden sm:block w-full h-full">
+			<img
+				class="
+					absolute left-0 top-0
+					w-full h-full
+					transform origin-top sm:origin-left
+				"
+				:style="{
+					'--transform-scale-x': length*0.5
+				}"
+				alt=""
+				:src="require('@/assets/images/top/logo-0-1-landscape.svg')">
+			<img
+				class="
+					absolute left-0 top-0
+					w-full h-full
+					transform origin-top sm:origin-left
+				"
+				:style="{
+					'--transform-translate-x': `${(length-2)*50}%`
+				}"
+				alt=""
+				:src="require('@/assets/images/top/logo-0-2-landscape.svg')">
+		</div>
+	</div>
 </template>
 
 <script>
@@ -36,7 +73,8 @@ export default {
 				transitions: {
 					show: {
 						duration: 200,
-						easing: 'cubicBezier(.5, 2, 1, 1)'
+						// easing: 'cubicBezier(.5, 2, 1, 1)'
+						easing: 'easeInOutExpo'
 					},
 					hide: {
 						duration: 200,
@@ -59,7 +97,6 @@ export default {
 					}
 				}
 			},
-			rotate: 0,
 			scale: 0,
 			length: 1,
 			focused: false

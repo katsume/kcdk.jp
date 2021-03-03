@@ -1,29 +1,36 @@
 <template>
-	<div
-		class="top">
-		<div class="logo-wrapper">
-			<h1 class="logo">
-				<span class="logo-arrow">
-					<TopLogoArrow
-						:visible="arrow.visible"
-						:pointed="arrow.pointed"></TopLogoArrow>
-				</span>
-				<span>
-					<span
-						v-for="(char, i) in chars.data"
-						:key="i"
-						class="logo-char">
-						<span class="sr-only">{{ char.name }}</span>
-						<TopLogoCharStroke
-							v-for="stroke in char.strokes"
-							:key="stroke.id"
-							:src="stroke.src"
-							:index="stroke.index"
-							:vw="vw" :vh="vh"
-							:animated="chars.animated"
-							:visible="chars.visible"
-							:aligned="chars.aligned"></TopLogoCharStroke>
-					</span>
+	<div class="
+		flex justify-center items-center
+		w-full h-95vh
+		p-10 sm:p-16 md:p-20
+		overflow-hidden
+	">
+		<div class="
+			flex flex-col sm:flex-row justify-between
+			relative
+			h-full sm:w-full sm:h-auto
+		">
+			<div class="flex-grow">
+				<TopLogoArrow
+					:visible="arrow.visible"
+					:pointed="arrow.pointed"></TopLogoArrow>
+			</div>
+			<h1 class="flex flex-col sm:flex-row items-center">
+				<span class="logo-char block"></span>
+				<span
+					v-for="(char, i) in chars.data"
+					:key="i"
+					class="logo-char block relative transform">
+					<span class="sr-only">{{ char.name }}</span>
+					<TopLogoCharStroke
+						v-for="stroke in char.strokes"
+						:key="stroke.id"
+						:src="stroke.src"
+						:index="stroke.index"
+						:vw="vw" :vh="vh"
+						:animated="chars.animated"
+						:visible="chars.visible"
+						:aligned="chars.aligned"></TopLogoCharStroke>
 				</span>
 			</h1>
 		</div>
@@ -73,7 +80,7 @@ export default {
 						return {
 							id,
 							index: cnt++,
-							src: require(`@/assets/images/logo-${id}.svg`)
+							src: require(`@/assets/images/top/logo-${id}.svg`)
 						}
 					})
 					return char
@@ -138,75 +145,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-$top-height: 95vh;
-
-$chars-width-portrait: 64px;
-$chars-height-portrait: 412px;
-$aspect-portrait: $chars-width-portrait / $chars-height-portrait;
-$arrow-offset-portrait: 0px;
-$char-offset-portrait: (
-	152px,
-	218.5px,
-	285px,
-	353px
-);
-
-$chars-width-landscape: 399px;
-$chars-height-landscape: 64px;
-$aspect-landscape: $chars-width-landscape / $chars-height-landscape;
-$arrow-offset-landscape: 0px;
-$char-offset-landscape: (
-	167.5px,
-	228.5px,
-	287.5px,
-	348px
-);
-
-.top {
-	@apply flex w-full justify-center items-center overflow-hidden;
-	height: $top-height;
-}
-
-.logo-wrapper {
-	width: calc(#{$top-height} * 0.75 * #{$aspect-portrait});
-}
-.logo {
-	@apply relative w-full h-0;
-	padding-bottom: percentage(1 / $aspect-portrait);
-}
-.logo-arrow, .logo-char {
-	@apply block absolute left-0 w-full;
-	height: percentage($aspect-portrait);
-}
-.logo-arrow {
-	top: percentage($arrow-offset-portrait / $chars-height-portrait);
-}
-.logo-char {
-	@for $i from 1 through 4 {
-		&:nth-child(#{$i}) { top: percentage(nth($char-offset-portrait, $i) / $chars-height-portrait); }
-	}
-}
-@screen sm {
-	.logo-wrapper {
-		@apply w-3/5;
-	}
-	.logo {
-		padding-bottom: percentage(1 / $aspect-landscape);
-	}
-	.logo-arrow, .logo-char {
-		width: percentage(1 / $aspect-landscape);
-		height: 100%;
-		top: 0 !important;
-	}
-	.logo-arrow {
-		transform: rotate(-90deg);
-		left: percentage($arrow-offset-landscape / $chars-width-landscape);
-	}
-	.logo-char {
-		@for $i from 1 through 4 {
-			&:nth-child(#{$i}) { left: percentage(nth($char-offset-landscape, $i) / $chars-width-landscape); }
-		}
-	}
-}
+<style>
 </style>

@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	.vertical-rl {
-		writing-mode: vertical-rl;
+@layer components {
+
+	.logo-char {
+		@apply w-16 h-16;
 	}
+	.logo-char:nth-child(1) { @apply h-5; }
+	.logo-char:nth-child(2) { --transform-translate-x: 0; --transform-translate-y: 6.25%; }
+	.logo-char:nth-child(3) { --transform-translate-x: 0; --transform-translate-y: 10.16%; }
+	.logo-char:nth-child(4) { --transform-translate-x: 0; --transform-translate-y: 14.06%; }
+	.logo-char:nth-child(5) { --transform-translate-x: 0; --transform-translate-y: 20.31%; }
+	@screen sm {
+		.logo-char {
+			@apply w-20 h-20;
+		}
+		.logo-char:nth-child(1) { @apply w-0; }
+		.logo-char:nth-child(2) { --transform-translate-x: 49.22%; --transform-translate-y: 0; }
+		.logo-char:nth-child(3) { --transform-translate-x: 44.53%; --transform-translate-y: 0; }
+		.logo-char:nth-child(4) { --transform-translate-x: 36.72%; --transform-translate-y: 0; }
+		.logo-char:nth-child(5) { --transform-translate-x: 31.25%; --transform-translate-y: 0; }
+	}
+	@screen md {
+		.logo-char {
+			@apply w-24 h-24;
+		}
+		.logo-char:nth-child(1) { @apply w-2; }
+	}
+}
+
+@layer utilities {
 }

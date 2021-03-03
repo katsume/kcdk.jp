@@ -1,14 +1,13 @@
 <template>
 	<span
-		class="block absolute left-0 top-0 w-full h-0"
+		class="block absolute top-0 left-0"
 		:style="{
-			paddingBottom: '100%',
 			transform: [
 				`translate(${tx}px, ${ty}px)`
 			].join(' '),
 		}">
 		<img
-			class="block absolute left-0 top-0 w-full h-full"
+			class="w-full"
 			:style="{
 				transform: [
 					`scale(${scale})`,
@@ -16,7 +15,7 @@
 					`skew(${skewX}deg, ${skewY}deg)`
 				].join(' '),
 			}"
-			:src="src">
+			alt="" :src="src">
 	</span>
 </template>
 

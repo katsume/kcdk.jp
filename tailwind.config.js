@@ -10,9 +10,6 @@ module.exports= {
 		extend: {
 			colors: {
 				gray: {
-					'10': '#fcfcfc',
-					'25': '#f9f9f9',
-					'50': '#f2f2f2',
 					'100': '#e5e5e5',
 					'200': '#cccccc',
 					'300': '#b3b3b3',
@@ -24,8 +21,21 @@ module.exports= {
 					'900': '#1a1a1a'
 				}
 			},
+			spacing: {
+				'14': '3.5rem',
+				'44': '11rem'
+			},
+			height: {
+				'95vh': '95vh'
+			},
 			minWidth: {
 				'1/4': '25%'
+			},
+			minHeight: {
+				'95vh': '95vh'
+			},
+			maxWidth: {
+				'48': '12rem'
 			},
 			scale: {
 				'150': '1.5',
