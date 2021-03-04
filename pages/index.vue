@@ -3,6 +3,7 @@
 		
 		<Top></Top>
 		<OuchiEhonmuseum></OuchiEhonmuseum>
+		<DeepKamon></DeepKamon>
 		<hr class="border-gray-100">
 
 		<div class="

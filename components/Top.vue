@@ -1,10 +1,14 @@
 <template>
-	<div class="
-		flex justify-center items-center
-		w-full h-95vh
-		p-10 sm:p-16 md:p-20
-		overflow-hidden
-	">
+	<div
+		class="
+			flex justify-center items-center
+			w-full
+			p-10 sm:px-16 sm:py-0 md:px-20
+			overflow-hidden
+		"
+		:style="{
+			height: '85vh'
+		}">
 		<div class="
 			flex flex-col sm:flex-row justify-between
 			relative

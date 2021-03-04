@@ -2,7 +2,7 @@
 	<div>
 		<div class="
 			bg-gray-100 w-full
-			px-0 py-16 md:p-16 lg:p-20
+			px-2 py-16 md:p-16 lg:p-20
 		">
 			<div class="bg-contain bg-right-bottom bg-no-repeat" :style="{
 				'background-color': '#fff100',
@@ -25,30 +25,49 @@
 							grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 lg:gap-24 xl:gap-32
 						">
 							<div class="
+								relative
 								border-gray-500
 								border-2 md:border-4
 								rounded-lg md:rounded-xl
 								shadow-lg
 								overflow-hidden
 							">
-								<img
+								<Slideshow
 									class="w-full max-w-48"
+									:images="[
+										require('@/assets/images/ouchi-ehonmuseum/bakery/about1.png'),
+										require('@/assets/images/ouchi-ehonmuseum/bakery/about2.png'),
+										require('@/assets/images/ouchi-ehonmuseum/bakery/about3.png')
+									]"
+								></Slideshow>
+								<!-- <img
 									src="@/assets/images/ouchi-ehonmuseum/bakery/about2.png"
-									alt="自分だけのおもしろパンをつくろう！">
+									alt="自分だけのおもしろパンをつくろう！"> -->
 							</div>
 							<div class="
+								relative
 								border-gray-500
 								border-2 md:border-4
 								rounded-lg md:rounded-xl
 								shadow-lg
 								overflow-hidden
 							">
-								<img
+								<Slideshow
+									class="w-full max-w-48"
+									:images="[
+										require('@/assets/images/ouchi-ehonmuseum/zoo/about1.png'),
+										require('@/assets/images/ouchi-ehonmuseum/zoo/about2.png'),
+										require('@/assets/images/ouchi-ehonmuseum/zoo/about3.png')
+									]"
+									:delay="2000"
+								></Slideshow>
+								<!-- <img
 									class="w-full max-w-48"
 									src="@/assets/images/ouchi-ehonmuseum/zoo/about1.png"
-									alt="かざして発見！どっとこ どうぶつえん">
+									alt="かざして発見！どっとこ どうぶつえん"> -->
 							</div>
 							<div class="
+								relative
 								border-gray-500
 								border-2 md:border-4
 								rounded-lg md:rounded-xl
@@ -79,7 +98,7 @@
 						<dd class="mt-2 leading-loose">
 							<a class="underline" href="https://plaplax.com/" target="_blank">plaplax</a> / 
 							<a class="underline" href="https://magiclogic.jp/" target="_blank">齋藤雄介</a> / 
-							<span class="text-black text-opacity-50">勝目祐一郎（かちどき）</span> / 
+							<span class="text-secondary">勝目祐一郎（かちどき）</span> / 
 							<a class="underline" href="http://www.torafu.com/" target="_blank">トラフ建築設計事務所</a> / 
 							<a class="underline" href="http://nakamuranorio.com/" target="_blank">中村至男</a> / 
 							<a class="underline" href="https://danboard-man.com/" target="_blank">みんなのダンボールマン（d_l_b）</a> / 
