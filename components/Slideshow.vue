@@ -1,6 +1,7 @@
 <template>
 	<div :style="{
-		'--transition-duration': `${duration*0.001}s`
+		'--transition-duration': `${duration*0.001}s`,
+		'--transition-delay': `${delay*0.001}s`
 	}">
 		<div v-if="images.length">
 			<div
@@ -50,11 +51,9 @@ export default {
 		}
 	},
 	mounted(){
-		setTimeout(()=>{
-			this.timerId= setInterval(()=>{
-				this.index= (this.index+1)%this.images.length
-			}, this.interval)
-		}, this.delay)
+		this.timerId= setInterval(()=>{
+			this.index= (this.index+1)%this.images.length
+		}, this.interval)
 	},
 	beforeDestroy(){
 		clearInterval(this.timerId)
@@ -68,6 +67,7 @@ export default {
 .fade-leave-active {
 	transition-property: opacity;
 	transition-duration: var(--transition-duration);
+	transition-delay: var(--transition-delay);
 }
 .fade-enter-active {
 	position: absolute;

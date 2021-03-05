@@ -24,22 +24,13 @@ module.exports= {
 				'secondary': '#999999'
 			},
 			spacing: {
-				'14': '3.5rem',
-				'44': '11rem',
 				'full': '100%'
-			},
-			height: {
-			},
-			minWidth: {
-				'1/4': '25%'
-			},
-			minHeight: {
 			},
 			maxWidth: {
 				'48': '12rem'
 			},
-			translate: {
-				'-1/4': '-25%'
+			zIndex: {
+				'1': 1
 			}
 		}
 	}
