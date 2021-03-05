@@ -30,7 +30,7 @@
 								border-2 md:border-4
 								rounded-lg md:rounded-xl
 								shadow-lg
-								overflow-hidden
+								overflow-hidden z-1
 							">
 								<Slideshow
 									class="w-full max-w-48"
@@ -50,7 +50,7 @@
 								border-2 md:border-4
 								rounded-lg md:rounded-xl
 								shadow-lg
-								overflow-hidden
+								overflow-hidden z-1
 							">
 								<Slideshow
 									class="w-full max-w-48"

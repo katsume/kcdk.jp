@@ -1,6 +1,6 @@
 <template>
 	<span
-		class="block absolute top-0 left-0"
+		class="block absolute top-0 left-0 w-full"
 		:style="{
 			transform: [
 				`translate(${tx}px, ${ty}px)`
