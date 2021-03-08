@@ -27,8 +27,6 @@
 							<div class="
 								relative
 								border-gray-500
-								border-2 md:border-4
-								rounded-lg md:rounded-xl
 								shadow-lg
 								overflow-hidden z-1
 							">
@@ -47,8 +45,6 @@
 							<div class="
 								relative
 								border-gray-500
-								border-2 md:border-4
-								rounded-lg md:rounded-xl
 								shadow-lg
 								overflow-hidden z-1
 							">
@@ -69,10 +65,8 @@
 							<div class="
 								relative
 								border-gray-500
-								border-2 md:border-4
-								rounded-lg md:rounded-xl
 								shadow-lg
-								overflow-hidden
+								overflow-hidden z-1
 							">
 								<img
 									class="w-full max-w-48"
@@ -91,7 +85,8 @@
 			<h2>おうちで！絵本ミュージアム2020</h2>
 			<div class="md:grid grid-cols-2 gap-8 mt-8">
 				<div>
-					<dl class="text-xs">
+					<h3 class="text-sm">Website</h3>
+					<dl class="text-xs mt-8">
 						<dt class="font-bold">主催</dt>
 						<dd class="mt-2 leading-loose">福岡アジア美術館 / 西日本新聞社 / TNCテレビ西日本 / NPO法人子ども文化コミュニティ</dd>
 						<dt class="mt-8 font-bold">制作チーム</dt>
